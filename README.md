@@ -8,7 +8,11 @@
 - **Containerization:** Docker
 - **Orchestration:** Kubernetes (K3s optimized)
 
-- FastNext-Orchestrator/
+
+## Repo Structure
+
+```
+FastNext-Orchestrator/
 ├── backend/
 │   ├── main.py
 │   ├── requirements.txt
@@ -21,6 +25,8 @@
 │   └── deployment.yaml
 ├── .gitignore
 └── README.md
+```
+
 
 ## Quick Start (Ubuntu Server)
 
