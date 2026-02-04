@@ -265,15 +265,3 @@ sudo ufw allow 30002/tcp
 2. **Access App:** Go to `http://<YOUR_SERVER_IP>:30002` in your browser.
 
 ---
-
-### `.gitignore` (Root Directory)
-
-```text
-node_modules/
-.next/
-__pycache__/
-*.pyc
-.env
-venv/
-
-```
