@@ -277,5 +277,3 @@ __pycache__/
 venv/
 
 ```
-
-**Would you like me to help you set up an Ingress Controller next so you can access this via a domain name (HTTP/HTTPS) instead of port 30002?**
