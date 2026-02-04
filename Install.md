@@ -27,7 +27,7 @@ echo "export KUBECONFIG=/etc/rancher/k3s/k3s.yaml" >> ~/.bashrc
 source ~/.bashrc
 
 # 5. Create Project Structure
-mkdir -p ~/FastNext-Orchestrator/backend ~/FastNext-Orchestrator/k8s
+mkdir -p ~/FastNext-Orchestrator/backend ~/FastNext-Orchestrator/frontend ~/FastNext-Orchestrator/k8s
 
 ```
 
