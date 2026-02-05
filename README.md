@@ -1,41 +1,32 @@
-# FastNext Orchestrator 🚀
+# FastNext Orchestrator
+FastNext Orchestrator is a full-stack proof-of-concept (POC) that deploys a FastAPI backend and a Next.js frontend onto a single-node Kubernetes (K3s) cluster running on Debian 12.9.
 
-**FastNext Orchestrator** is a production-ready Proof of Concept (POC) designed to deploy a modern full-stack application on Kubernetes in minutes. It bridges a high-performance Python backend with a reactive TypeScript frontend.
+## System Architecture
+Frontend: Next.js 14+ (App Router) running on Port 30002 (NodePort).
 
-## Tech Stack
-- **Backend:** Python, FastAPI
-- **Frontend:** Next.js 14+, TypeScript, Tailwind CSS
-- **Containerization:** Docker
-- **Orchestration:** Kubernetes (K3s optimized)
+Backend: FastAPI (Python 3.11) running on Port 30001 (NodePort).
 
+Orchestration: K3s (Lightweight Kubernetes).
 
-## Repo Structure
+Container Engine: Docker (for builds) and Containerd (K3s runtime).
 
+## Quick Start (Automated Deployment)
+We provide a lifecycle manager script that handles system dependencies, user permissions, container builds, and Kubernetes orchestration.
+
+### 1. Prerequisites
+A fresh install of Debian 12.9.
+
+Root access (to install sudo and configure groups).
+
+### 2. Execution
+Download or create orchestrator_manager.sh, then run:
+
+Bash
 ```
-FastNext-Orchestrator/
-├── backend/
-│   ├── main.py
-│   ├── requirements.txt
-│   └── Dockerfile
-├── frontend/
-│   ├── src/app/page.tsx
-│   ├── Dockerfile
-│   └── ... (Next.js boilerplate)
-├── k8s/
-│   └── deployment.yaml
-├── .gitignore
-└── README.md
+# Set your username in the script first!
+nano orchestrator_manager.sh
+# Update TARGET_USER="your_username"
+
+chmod +x orchestrator_manager.sh
+sudo ./orchestrator_manager.sh
 ```
-
-
-## Quick Start (Ubuntu Server)
-
-### 1. Initialize Environment
-```bash
-# Install Docker & K3s
-curl -fsSL [https://get.docker.com](https://get.docker.com) -o get-docker.sh && sudo sh get-docker.sh
-curl -sfL [https://get.k3s.io](https://get.k3s.io) | sh -
-
-# Configure Permissions
-sudo chmod 644 /etc/rancher/k3s/k3s.yaml
-export KUBECONFIG=/etc/rancher/k3s/k3s.yaml
