@@ -1,46 +1,25 @@
-# --- FastNext Orchestrator Global Ignores ---
+# --- Project Specific ---
+*.sh
+!orchestrator_manager.sh
 
-# OS Files
-.DS_Store
-Thumbs.db
-*.log
-*.tmp
+# --- Python (Backend) ---
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+venv/
+ENV/
+.env
 
-# IDEs and Editors
-.vscode/
-.idea/
-*.swp
-*.swo
-
-# --- Frontend (Next.js / Node) ---
+# --- Node (Frontend) ---
 frontend/node_modules/
 frontend/.next/
 frontend/out/
 frontend/build/
-frontend/.env
-frontend/.env.local
-frontend/.env.development.local
-frontend/.env.test.local
-frontend/.env.production.local
-frontend/npm-debug.log*
-frontend/yarn-debug.log*
-frontend/yarn-error.log*
+.DS_Store
+*.local
 
-# --- Backend (Python / FastAPI) ---
-backend/__pycache__/
-backend/*.py[cod]
-backend/*$py.class
-backend/.venv/
-backend/venv/
-backend/env/
-backend/build/
-backend/dist/
-backend/*.egg-info/
-backend/.env
-backend/.pytest_cache/
-backend/.python-version
-
-# --- Docker & Kubernetes ---
-.dockerconfigjson
-# Ignore local k3s/k8s configs if you ever copy them here
-k8s/*.kubeconfig
+# --- Kubernetes/Linux ---
+.kube/
+*.log
+k3s.yaml
